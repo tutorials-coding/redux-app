@@ -7,8 +7,9 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { rootReducer } from './store/reducers'
+import { logger } from './middleware/logger'
 
-const store = createStore(rootReducer, applyMiddleware())
+const store = createStore(rootReducer, applyMiddleware(logger))
 
 ReactDOM.render(
   <React.StrictMode>
