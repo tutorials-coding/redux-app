@@ -7,17 +7,17 @@ import { AddItemContainer } from '../AddItem'
 
 import './Editor.css'
 
-export function Editor({ items }) {
+export function Editor({ items, onTextChange, onToggle, onRemove }) {
   const handleChange = (item, value) => {
-    console.log(item, value)
+    onTextChange(item, value)
   }
 
   const handleToggle = (item, value) => {
-    console.log(item, value)
+    onToggle(item, value)
   }
 
   const handleRemove = (item) => {
-    console.log(item)
+    onRemove(item)
   }
 
   return (
