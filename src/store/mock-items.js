@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid'
 export const todoList = [
   {
     id: uuid(),
-    text: 'Lear JS',
+    text: 'Learn JS',
     done: true,
   },
   {
