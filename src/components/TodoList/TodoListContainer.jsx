@@ -4,5 +4,8 @@ import { TodoList } from './TodoList'
 import { todoList } from '../../store/mock-items'
 
 export function TodoListContainer() {
-  return <TodoList items={todoList} />
+  const doneItems = todoList.filter((item) => item.done)
+  const todoItems = todoList.filter((item) => !item.done)
+
+  return <TodoList doneItems={doneItems} todoItems={todoItems} />
 }

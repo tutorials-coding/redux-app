@@ -1,12 +1,8 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card'
 
 import './TodoList.css'
 
-export function TodoList({ items }) {
-  const doneItems = items.filter((item) => item.done)
-  const todoItems = items.filter((item) => !item.done)
-
+export function TodoList({ doneItems, todoItems }) {
   return (
     <div className="todo-list__container">
       <div className="todo-list__items-container">
