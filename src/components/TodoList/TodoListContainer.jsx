@@ -1,11 +1,13 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 import { TodoList } from './TodoList'
 
-import { todoList } from '../../store/mock-items'
-
 export function TodoListContainer() {
-  const doneItems = todoList.filter((item) => item.done)
-  const todoItems = todoList.filter((item) => !item.done)
+  const items = useSelector((state) => state.todos)
+
+  const doneItems = items.filter((item) => item.done)
+  const todoItems = items.filter((item) => !item.done)
 
   return <TodoList doneItems={doneItems} todoItems={todoItems} />
 }
