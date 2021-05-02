@@ -1,5 +1,5 @@
 import { todoList } from './mock-items'
-import { ADD_TODO, UPDATE_TODO_TEXT } from './todo-actions'
+import { ADD_TODO, UPDATE_TODO_TEXT, UPDATE_TODO_DONE } from './todo-actions'
 
 export const todoReducer = (state = todoList, action) => {
   switch (action.type) {
@@ -15,6 +15,20 @@ export const todoReducer = (state = todoList, action) => {
             return {
               ...item,
               text,
+            }
+          }
+          return item
+        }),
+      ]
+    }
+    case UPDATE_TODO_DONE: {
+      const { id, done } = action.payload
+      return [
+        ...state.map((item) => {
+          if (item.id === id) {
+            return {
+              ...item,
+              done,
             }
           }
           return item

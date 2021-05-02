@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { UPDATE_TODO_TEXT } from '../../store/todo-actions'
+import { UPDATE_TODO_TEXT, UPDATE_TODO_DONE } from '../../store/todo-actions'
 import { Editor } from './Editor'
 
 export function EditorContainer() {
@@ -18,8 +18,14 @@ export function EditorContainer() {
     })
   }
 
-  const handleToggle = (item, value) => {
-    console.log(item, value)
+  const handleToggle = (item, done) => {
+    dispatch({
+      type: UPDATE_TODO_DONE,
+      payload: {
+        id: item.id,
+        done,
+      },
+    })
   }
 
   const handleRemove = (item) => {
