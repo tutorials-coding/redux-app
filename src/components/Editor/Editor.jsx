@@ -6,8 +6,12 @@ import { Trash } from 'react-bootstrap-icons'
 import './Editor.css'
 
 export function Editor({ items }) {
-  const handleChange = (event) => {
-    console.log(event.target.value)
+  const handleChange = (item, value) => {
+    console.log(item, value)
+  }
+
+  const handleToggle = (item, value) => {
+    console.log(item, value)
   }
 
   const handleRemove = (item) => {
@@ -18,11 +22,17 @@ export function Editor({ items }) {
     <div className="editor__container">
       {items.map((item) => (
         <Form.Group key={item.id} className="editor__item">
+          <Form.Check
+            type="checkbox"
+            className="editor__checkbox"
+            defaultValue={item.done}
+            onChange={(event) => handleToggle(item, event.target.checked)}
+          />
           <Form.Control
             type="text"
             className="editor__input"
             defaultValue={item.text}
-            onChange={handleChange}
+            onChange={(event) => handleChange(item, event.target.value)}
           />
           <Button
             type="button"
