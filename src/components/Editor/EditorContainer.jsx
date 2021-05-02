@@ -1,8 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 import { Editor } from './Editor'
-import { todoList } from '../../store/mock-items'
 
 export function EditorContainer() {
+  const items = useSelector((state) => state.todos)
+
   const handleTextChange = (item, value) => {
     console.log(item, value)
   }
@@ -17,7 +20,7 @@ export function EditorContainer() {
 
   return (
     <Editor
-      items={todoList}
+      items={items}
       onTextChange={handleTextChange}
       onToggle={handleToggle}
       onRemove={handleRemove}
