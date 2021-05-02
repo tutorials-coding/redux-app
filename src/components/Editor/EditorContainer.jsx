@@ -1,7 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { UPDATE_TODO_TEXT, UPDATE_TODO_DONE } from '../../store/todo-actions'
+import {
+  UPDATE_TODO_TEXT,
+  UPDATE_TODO_DONE,
+  DELETE_TODO,
+} from '../../store/todo-actions'
 import { Editor } from './Editor'
 
 export function EditorContainer() {
@@ -29,7 +33,12 @@ export function EditorContainer() {
   }
 
   const handleRemove = (item) => {
-    console.log(item)
+    dispatch({
+      type: DELETE_TODO,
+      payload: {
+        id: item.id,
+      },
+    })
   }
 
   return (
