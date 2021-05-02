@@ -6,16 +6,10 @@ export const UPDATE_TODO_TEXT = 'UPDATE_TODO_TEXT'
 export const UPDATE_TODO_DONE = 'UPDATE_TODO_DONE'
 export const DELETE_TODO = 'DELETE_TODO'
 
-export const addTodo = (text) => {
-  return {
-    type: ADD_TODO,
-    payload: {
-      id: uuid(),
-      text,
-      done: false,
-    },
-  }
-}
+export const addTodo = makeActionCreator(ADD_TODO, ['text'], {
+  id: () => uuid(),
+  done: () => false,
+})
 
 export const updateTodoText = makeActionCreator(UPDATE_TODO_TEXT, [
   'id',
