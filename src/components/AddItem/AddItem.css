@@ -1,0 +1,23 @@
+.add-item__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-item__item {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+}
+
+.add-item__input {
+  margin-right: 10px;
+}
+
+.add-item__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
