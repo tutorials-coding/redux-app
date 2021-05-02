@@ -28,13 +28,13 @@ export function Editor({ items, onTextChange, onToggle, onRemove }) {
             <Form.Check
               type="checkbox"
               className="editor__checkbox"
-              defaultValue={item.done}
+              checked={item.done}
               onChange={(event) => handleToggle(item, event.target.checked)}
             />
             <Form.Control
               type="text"
               className="editor__input"
-              defaultValue={item.text}
+              value={item.text}
               onChange={(event) => handleChange(item, event.target.value)}
             />
             <Button
