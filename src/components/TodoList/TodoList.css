@@ -2,20 +2,16 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: row;
+}
+
+.todo-list__items-container {
+  flex: 1;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 10px;
 }
 
-.todo-list__item {
-  width: 100%;
-  max-width: 400px;
-}
-
-.todo-list__item:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.todo-list__item-title {
+.todo-list__item-text {
   font-size: 16px;
-  font-weight: bold;
 }

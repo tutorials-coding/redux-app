@@ -1,0 +1,27 @@
+.editor__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editor__item {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+}
+
+.editor__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.editor__input {
+  margin-right: 10px;
+}
+
+.editor__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
