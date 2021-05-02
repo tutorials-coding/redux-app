@@ -1,27 +1,29 @@
+import { v4 as uuid } from 'uuid'
+
 export const todoList = [
   {
-    id: 1,
-    text: 'text',
+    id: uuid(),
+    text: 'Lear JS',
     done: true,
   },
   {
-    id: 2,
-    text: 'text',
+    id: uuid(),
+    text: 'Learn React',
     done: true,
   },
   {
-    id: 3,
-    text: 'text',
+    id: uuid(),
+    text: 'Learn Redux',
     done: true,
   },
   {
-    id: 4,
-    text: 'text',
+    id: uuid(),
+    text: 'Learn pure functions',
     done: false,
   },
   {
-    id: 5,
-    text: 'text',
+    id: uuid(),
+    text: 'Create todo app',
     done: false,
   },
 ]
