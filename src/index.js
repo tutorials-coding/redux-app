@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 
 import './index.css'
 import App from './App'
@@ -9,7 +10,10 @@ import reportWebVitals from './reportWebVitals'
 import { rootReducer } from './store/reducers'
 import { logger, scheduler } from './middleware'
 
-const store = createStore(rootReducer, applyMiddleware(logger, scheduler))
+const store = createStore(
+  rootReducer,
+  applyMiddleware(logger, scheduler, thunk)
+)
 
 ReactDOM.render(
   <React.StrictMode>

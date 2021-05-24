@@ -23,6 +23,7 @@ export function EditorContainer() {
 
   const handleRemove = (item) => {
     // dispatch(deleteTodo(item.id))
+    // eslint-disable-next-line
     const clear = dispatch({
       type: DELETE_TODO,
       payload: {
