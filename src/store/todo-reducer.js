@@ -4,10 +4,15 @@ import {
   UPDATE_TODO_TEXT,
   UPDATE_TODO_DONE,
   DELETE_TODO,
+  INIT_TODOS,
 } from './todo-actions'
 
 export const todoReducer = (state = todoList, action) => {
   switch (action.type) {
+    case INIT_TODOS: {
+      const items = action.payload
+      return items
+    }
     case ADD_TODO: {
       const item = action.payload
       return [...state, item]
