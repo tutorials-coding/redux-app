@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Router } from './pages/Router'
 import { Nav } from './pages/Nav'
 import './App.css'
+
+import { getTodos } from './store/thunks'
 
 const navItems = [
   {
@@ -17,6 +21,11 @@ const navItems = [
 ]
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getTodos())
+  }, [dispatch])
   return (
     <div className="app__container">
       <Router>

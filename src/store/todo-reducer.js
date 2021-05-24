@@ -1,4 +1,4 @@
-import { todoList } from './mock-items'
+import { todoList } from './mock-items' // eslint-disable-line
 import {
   ADD_TODO,
   UPDATE_TODO_TEXT,
@@ -7,7 +7,7 @@ import {
   INIT_TODOS,
 } from './todo-actions'
 
-export const todoReducer = (state = todoList, action) => {
+export const todoReducer = (state = [], action) => {
   switch (action.type) {
     case INIT_TODOS: {
       const items = action.payload
