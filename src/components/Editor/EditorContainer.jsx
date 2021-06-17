@@ -24,7 +24,7 @@ export function EditorContainer() {
   const handleRemove = (item) => {
     // dispatch(deleteTodo(item.id))
     // eslint-disable-next-line
-    const clear = dispatch({
+    const result = dispatch({
       type: DELETE_TODO,
       payload: {
         id: item.id,
@@ -33,7 +33,7 @@ export function EditorContainer() {
         delayMs: 1000,
       },
     })
-    // clear()
+    // result.clearScheduler()
   }
 
   return (

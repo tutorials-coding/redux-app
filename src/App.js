@@ -24,7 +24,10 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getTodos())
+    const res = dispatch(getTodos())
+    res.thunk.then((data) => {
+      console.log('todo items', data)
+    })
   }, [dispatch])
   return (
     <div className="app__container">
