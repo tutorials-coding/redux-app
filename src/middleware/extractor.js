@@ -1,5 +1,7 @@
 // safe handling of the results in the middleware chain
-export const extractor = (key, middleware) => (store) => (next) => (action) => {
+export const extractor = (middleware, name = null) => (store) => (next) => (
+  action
+) => {
   let prevResults
   const _next = (action) => {
     prevResults = next(action)
@@ -10,7 +12,7 @@ export const extractor = (key, middleware) => (store) => (next) => (action) => {
   const currentResult = middleware(store)(_next)(action)
   const results = {
     ...prevResults,
-    [key]: currentResult,
   }
+  name && (results[name] = currentResult)
   return results
 }
