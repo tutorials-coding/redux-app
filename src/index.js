@@ -13,17 +13,11 @@ import { logger, scheduler, extractor, resetter } from './middleware'
 const store = createStore(
   rootReducer,
   applyMiddleware(
+    // resetter, // resets returned value and makes it unavailable for the dispath() user
+    // extractor(resetter), // make it safe
     extractor(logger),
     extractor(scheduler, 'clearScheduler'),
-    // resetter, // resets returned value and makes it unavailable for the dispathc() user
-    // extractor('resetter', resetter), // make it safe
     extractor(thunk, 'thunk')
-
-    // ...[
-    //   { middleware: logger, name: 'logger' },
-    //   { middleware: scheduler, name: 'clearScheduler' },
-    //   { middleware: thunk, name: 'thunk' },
-    // ].map((m) => extractor(m.name, m.middleware))
   )
 )
 

@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     const result = dispatch(getTodos())
 
-    console.log('result', result)
+    console.log('dispatch(getTodos()) result', result)
     result.thunk.then((data) => {
       console.log('todo items', data)
     })
